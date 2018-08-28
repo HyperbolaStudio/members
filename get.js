@@ -1,13 +1,17 @@
 try{
 $(document).ready(function(){
 	var id="0000201701230016";
-	alert(id);
-	$.get("members/"+id,function(data){
-		$("#memberName").append(data.mamberName);
-		$("#memberSex").append(data.mamberSex);
+	$("#json").load("members/"+id+".json",function(){
+		var data=JSON.parse($("#json").html());
+		$("#memberName").append(data.memberName);
+		$("#memberSex").append(data.memberSex);
 		$("#joinDate").append(data.joinDate);
 		$("#id").append(data.ID);
-		$("#valid").append(data.validfrom+"~"data.validUntil);
+		if(data.validUntil=="9999/12/31"){
+			$("#valid").append(data.validFrom+" 长期有效");
+		}else{
+			$("#valid").append(data.validFrom+"~"+data.validUntil);
+		}
 		$.get("org.txt",function(org){
 			var issueOrg=data.issueOrg;
 			var current=data.current;
@@ -31,5 +35,5 @@ $(document).ready(function(){
 	});
 });
 }catch(e){
-	alert(e.message)
+	alert(e)
 }
