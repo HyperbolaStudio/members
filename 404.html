@@ -9,37 +9,81 @@
 		<script src="https://libs.mhwco.org/dlvr/jquery/jquery.js"></script>
 		<script src="https://pd.mhwco.org/js/reflect.js"></script>
 		<script src="get.js"></script>
+		<style>
+ul{
+	list-style:none;
+	padding:0;
+	margin:4px;
+}
+code, tt {
+   margin: 0 2px;
+   padding: 0 5px;
+   white-space: nowrap;
+   border: 1px solid #eaeaea;
+   background-color: #f8f8f8;
+   border-radius: 3px; }
+
+pre code {
+   margin: 0;
+   padding: 0;
+   white-space: pre;
+   border: none;
+   background: transparent; }
+
+.highlight pre {
+   background-color: #f8f8f8;
+   border: 1px solid #cccccc;
+   font-size: 13px;
+   line-height: 19px;
+   overflow: auto;
+   padding: 6px 10px;
+   border-radius: 3px; }
+
+pre {
+   background-color: #f8f8f8;
+   border: 1px solid #cccccc;
+   font-size: 13px;
+   line-height: 19px;
+   overflow: auto;
+   padding: 6px 10px;
+   border-radius: 3px; }
+pre code, pre tt {
+   background-color: transparent;
+   border: none; }
+		</style>
 	</head>
 	<body class="white-b">
 		<header class="title-bar blue-b">
-			<h1>Hyperbola Studio成员证</h1>
+			<h1>成员证（beta）</h1>
 		</header>
 		<main class="main">
-			<div id="memberName">
+			<ul>
+			<li id="memberName">
 				<strong>姓名：</strong>
-			</div>
-			<div id="memberSex">
+			</li>
+			<li id="memberSex">
 				<strong>性别：</strong>
-			</div>
-			<div id="joinDate">
+			</li>
+			<li id="joinDate">
 				<strong>加入日期：</strong>
-			</div>
-			<div id="current">
+			</li>
+			<li id="current">
 				<strong>任职于：</strong>
-			</div>
-			<div id="id">
+			</li>
+			<li id="id">
 				<strong>ID：</strong>
-			</div>
-			<div id="valid">
+			</li>
+			<li id="valid">
 				<strong>有效期：</strong>
-			</div>
-			<div id="issueOrg">
+			</li>
+			<li id="issueOrg">
 				<strong>发证机关：</strong>
-			</div>
+			</li>
 			<div id="json-origin">
-				js原文：
-				<div id="json"></div>
+				<button class="blue-b" id="toggle">显示/隐藏js原文</button>
+				<pre id="json-container" style="display:none"><code id="json"></code></pre>
 			</div>
+			<div id="org"></div>
 		</main>
 	</body>
 </html>
