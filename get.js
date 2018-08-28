@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$("#json").load("/members/"+id+".json",function(status){
 		var data=JSON.parse($("#json").html());
 		$("#memberName").append(data.memberName);
-		data.memberSex="male"?$("#memberSex").append("男"):$("#memberSex").append("女");
+		data.memberSex=="male"?$("#memberSex").append("男"):$("#memberSex").append("女");
 		$("#joinDate").append(data.joinDate);
 		$("#id").append(data.ID);
 		if(data.validUntil=="9999/12/31"){
