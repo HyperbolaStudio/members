@@ -1,7 +1,7 @@
 //JavaScript Document
 $(document).ready(function(){
 	var id=location.pathname;
-	$("#json").load("members/"+id+".json",function(status){
+	$("#json").load("/members/"+id+".json",function(status){
 		var data=JSON.parse($("#json").html());
 		$("#memberName").append(data.memberName);
 		data.memberSex="male"?$("#memberSex").append("男"):$("#memberSex").append("女");
@@ -12,7 +12,7 @@ $(document).ready(function(){
 		}else{
 			$("#valid").append(data.validFrom+"~"+data.validUntil);
 		}
-		$("#org").load("org.txt",function(){
+		$("#org").load("/org.txt",function(){
 			var org=$("#org").html();
 			var issueOrg=data.issueOrg;
 			var current=data.current;
