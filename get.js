@@ -1,5 +1,7 @@
+try{
 $(document).ready(function(){
-	var id=location.pathname;
+	var id="0000201701230016";
+	alert(id);
 	$.get("members/"+id,function(data){
 		$("#memberName").append(data.mamberName);
 		$("#memberSex").append(data.mamberSex);
@@ -28,3 +30,6 @@ $(document).ready(function(){
 		});
 	});
 });
+}catch(e){
+	alert(e.message)
+}
