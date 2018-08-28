@@ -1,3 +1,4 @@
+//JavaScript Document
 $(document).ready(function(){
 	var id=location.pathname;
 	$("#json").load("members/"+id+".json",function(status){
