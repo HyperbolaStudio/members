@@ -3,7 +3,7 @@ $(document).ready(function(){
 	var id=location.pathname;
 	$("#json").load("/members/"+id+".json",function(status){
 		var data=JSON.parse($("#json").html());
-		$("#qrcode-img").attr("src","https://api.qrserver.com/v1/create-qr-code/?size=150x150&data="+$("#json").html());
+		$("#qrcode-img").attr("src","https://api.qrserver.com/v1/create-qr-code/?size=200x200&data="+$("#json").html());
 		$("#memberName").append(data.memberName);
 		data.memberSex=="male"?$("#memberSex").append("男"):$("#memberSex").append("女");
 		$("#joinDate").append(data.joinDate);
